@@ -1,0 +1,18 @@
+db, _ = create_db_and_parallels(100)
+
+pdb = get_paraellel_db(db, remove_index=10)
+db[10]
+
+sum(db)
+
+#differencing the attack using sum query
+
+sum(db) - sum(pdb)
+
+#differencing attack using mean quuery
+
+(sum(db).float() /  len(db)) - (sum(pdb).float() / len(pdb))
+
+# differencing the attack using threshold
+
+(sum(db).float() > 49) - (sum(pdb).float() > 49)
