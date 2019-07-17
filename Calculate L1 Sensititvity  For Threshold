@@ -1,0 +1,6 @@
+def query(db, threshold=5):
+    return (db.sum() > threshold).float()
+    
+for i in range(10):
+    sens_f = sensitivity(query, n_entries= 10)
+    print(snes_f)
